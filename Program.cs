@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication2
 {
@@ -58,7 +55,7 @@ namespace ConsoleApplication2
         /// <summary>
         /// 用於有結果的方法
         /// </summary>
-        static MethodCallExpression GetMethodExpression<TClass>(Expression<Action<TClass , object>> expression)
+        static MethodCallExpression GetMethodExpression<TClass>(Expression<Func<TClass , object>> expression)
             where TClass : class
         {
             var methodExp = (MethodCallExpression)expression.Body;
